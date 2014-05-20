@@ -1,9 +1,9 @@
 # Simple dnsmasq server
 
 ``` bash
-sudo docker run \
--v="$(pwd)/dnsmasq.hosts:/dnsmasq.hosts" \
--name=dnsmasq \
--p='127.0.0.10:53:5353/udp' \
+docker run \
+-name dnsmasq \
+-v=/etc/dnsmasq.hosts:/dnsmasq.hosts \
+-p='53:5353/udp' \
 -d eugeneware/dnsmasq
 ```
